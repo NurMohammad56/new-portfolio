@@ -1,103 +1,367 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import Image from "next/image"
+import Link from "next/link"
+import {
+  Menu,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  ExternalLink,
+  Phone,
+  Download,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
+
+export default function Portfolio() {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
+
+  const projects = [
+    {
+      title: "Psykick Club",
+      description:
+        "Community game platform ARV & TMC with real-time notifications, OAuth login, and automated game features using node-cron.",
+      github: "https://github.com/NurMohammad56/Psykick-club",
+      live: "https://psykick.vercel.app/login?returnUrl=%2Fchallenges",
+      stack: "NodeJS, ExpressJS, MongoDB, JWT, OAuth, WebSocket",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+    {
+      title: "Diamond Auction",
+      description:
+        "Real-time bidding system with automated bidding, Stripe Connect integration, and multi-role dashboards.",
+      github: "https://github.com/NurMohammad56/Diamond-Auctions",
+      live: "https://www.diamondauctionsllc.com/",
+      stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+    {
+      title: "House Security Check",
+      description: "Security check APIs with Stripe Connect payments and real-time chat notifications. The main service is home security check.",
+      github: "https://github.com/NurMohammad56/Royal-House-Check",
+      live: "https://royalhousecheck.com/",
+      stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+    {
+      title: "Table Fresh Backend",
+      description: "Farm-to-table marketplace connecting users with fresh foods from local farmers.",
+      github: "https://github.com/FSDTeam-SAA/gman54_backend",
+      live: "https://tablefresh.org/login",
+      stack: "NodeJS, ExpressJS, MongoDB, Payment Gateway",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+    {
+      title: "Bitnaro App Backend",
+      description: "Multi-service platform for home services with real-time tracking and admin dashboard.",
+      github: "https://github.com/FSDTeam-SAA/bitnaro_backend",
+      live: null,
+      stack: "NodeJS, ExpressJS, MongoDB, Real-time Tracking",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+    {
+      title: "Washlio App Backend",
+      description: "Car wash service with auto-matching and location-based services within 10km radius.",
+      github: "https://github.com/FSDTeam-SAA/eylanb_backend",
+      live: null,
+      stack: "NodeJS, ExpressJS, MongoDB, Location Services",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+    {
+      title: "Courier Service Backend",
+      description: "Complete courier system with multiple roles and comprehensive admin dashboard.",
+      github: "https://github.com/NurMohammad56/Courier-service",
+      live: null,
+      stack: "NodeJS, ExpressJS, MongoDB, Role Management",
+      image: "/placeholder.svg?height=120&width=200",
+    },
+  ]
+
+  const totalGroups = Math.ceil(projects.length / 3)
+
+  const nextProject = () => {
+    setCurrentProjectIndex((prev) => (prev + 1) % totalGroups)
+  }
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prev) => (prev - 1 + totalGroups) % totalGroups)
+  }
+
+  const getCurrentProjects = () => {
+    const startIndex = currentProjectIndex * 3
+    return projects.slice(startIndex, startIndex + 3)
+  }
+
+  const currentProjects = getCurrentProjects()
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="min-h-screen bg-black text-white p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8">
+        {/* Left Sidebar */}
+        <div className="space-y-8">
+          {/* Profile Header */}
+          <div className="flex items-center gap-4">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/placeholder.svg?height=60&width=60"
+              alt="Nur Mohammad Profile"
+              width={60}
+              height={60}
+              className="rounded-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div>
+              <h1 className="text-2xl font-mono">NUR MOHAMMAD</h1>
+              <p className="text-gray-400">BACKEND DEVELOPER</p>
+              <div className="flex items-center gap-1 text-sm text-gray-500 mt-1">
+                <MapPin className="w-3 h-3" />
+                <span>Dhaka, Bangladesh</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bio */}
+          <div className="space-y-6">
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Motivated Backend Developer with experience in building scalable and secure backend systems using NodeJS
+              and ExpressJS. Proficient in database design, API development, and cloud integration. Passionate about
+              delivering clean, maintainable code.
+            </p>
+            <Button variant="outline" className="rounded-full bg-transparent" asChild>
+              <Link href="/app/assets/CV - Nur Mohammad.pdf" target="_blank">
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
+              </Link>
+            </Button>
+          </div>
+
+          {/* Experience */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-mono text-gray-300">Experience</h3>
+            <div className="space-y-3">
+              <div className="text-sm">
+                <p className="font-semibold text-white">Backend Developer</p>
+                <p className="text-gray-400">Scaleup Ads Agency • Mar 2025 - Present</p>
+              </div>
+              <div className="text-sm">
+                <p className="font-semibold text-white">Backend Developer</p>
+                <p className="text-gray-400">Arabian Services Company • Apr 2024 - Nov 2024</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-gray-300">
+              <Mail className="w-4 h-4" />
+              <a href="mailto:nurmohammad0605@gmail.com" className="hover:text-white transition-colors">
+                nurmohammad0605@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300">
+              <Phone className="w-4 h-4" />
+              <a
+                href="https://wa.me/8801889376903"
+                target="_blank"
+                className="hover:text-white transition-colors"
+                rel="noreferrer"
+              >
+                +880 1889376903 (WhatsApp)
+              </a>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="space-y-4">
+            <div className="flex gap-4">
+              <Button variant="ghost" size="icon" asChild>
+                <Link href="https://github.com/NurMohammad56" target="_blank">
+                  <Github className="w-5 h-5" />
+                </Link>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <Link href="https://www.linkedin.com/in/nurmohammad56/" target="_blank">
+                  <Linkedin className="w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+            <div className="text-gray-400 text-sm">
+              <p>© 2024 Nur Mohammad</p>
+              <div className="flex gap-2">
+                <Link href="/resume.pdf" target="_blank" className="hover:text-white">
+                  Resume
+                </Link>
+                <Link href="mailto:nurmohammad0605@gmail.com" className="hover:text-white">
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Right Content */}
+        <div className="space-y-6">
+          {/* Menu Button - Only show on mobile */}
+          <div className="flex justify-end lg:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="w-6 h-6" />
+            </Button>
+          </div>
+
+          {/* Projects Section with 3 Cards */}
+          <section>
+            <div className="flex justify-between items-center mb-3">
+              <h2 className="text-lg font-mono">Featured Projects</h2>
+              <div className="flex gap-1">
+                <Button variant="ghost" size="sm" onClick={prevProject} className="h-8 w-8 p-0">
+                  <ChevronLeft className="w-4 h-4" />
+                </Button>
+                <Button variant="ghost" size="sm" onClick={nextProject} className="h-8 w-8 p-0">
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Three Project Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {currentProjects.map((project, index) => (
+                <div key={index} className="bg-gray-900 rounded-lg overflow-hidden hover:bg-gray-800 transition-colors">
+                  <div className="relative aspect-[3/2] bg-gray-800">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h3 className="text-sm font-semibold mb-1">{project.title}</h3>
+                    <p className="text-gray-400 text-xs mb-2 leading-relaxed line-clamp-2">{project.description}</p>
+                    <p className="text-[10px] text-blue-400 mb-2">{project.stack}</p>
+                    <div className="flex gap-1">
+                      <Button size="sm" variant="ghost" className="text-xs h-6 px-2" asChild>
+                        <Link href={project.github} target="_blank">
+                          <Github className="w-3 h-3 mr-1" />
+                          Code
+                        </Link>
+                      </Button>
+                      {project.live && (
+                        <Button size="sm" variant="ghost" className="text-xs h-6 px-2" asChild>
+                          <Link href={project.live} target="_blank">
+                            <ExternalLink className="w-3 h-3 mr-1" />
+                            Live
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Project Indicators */}
+            <div className="flex justify-center gap-1 mt-3">
+              {Array.from({ length: totalGroups }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentProjectIndex(index)}
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                    index === currentProjectIndex ? "bg-blue-500" : "bg-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Project Counter */}
+            <div className="text-center mt-2 text-gray-400 text-xs">
+              {currentProjectIndex + 1} of {totalGroups} groups • {projects.length} total projects
+            </div>
+          </section>
+
+          {/* Stack Section */}
+          <section className="bg-blue-600 rounded-xl p-5">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-mono">Tech Stack</h2>
+            </div>
+            <div className="space-y-3">
+              <div>
+                <h3 className="text-sm font-semibold mb-2">Languages & Frameworks</h3>
+                <div className="flex flex-wrap gap-1">
+                  {["TypeScript", "JavaScript", "NodeJS", "ExpressJS"].map((tech) => (
+                    <span key={tech} className="bg-white/20 px-2 py-1 rounded-full text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold mb-2">Databases & Tools</h3>
+                <div className="flex flex-wrap gap-1">
+                  {["MongoDB", "MySQL", "Docker", "Redis", "JWT", "OAuth", "Stripe", "WebSocket"].map((tool) => (
+                    <span key={tool} className="bg-white/20 px-2 py-1 rounded-full text-xs">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Education Section - Moved before contact */}
+          <section className="bg-gray-900 rounded-xl p-5">
+            <h2 className="text-lg font-mono mb-3">Education</h2>
+            <div className="space-y-3">
+              <div className="text-sm">
+                <p className="font-semibold text-white">B.Sc. in Computer Science & Engineering</p>
+                <p className="text-gray-400">Northern University Bangladesh • 2023-2026 (Present)</p>
+              </div>
+              <div className="text-sm">
+                <p className="font-semibold text-white">Diploma in Engineering</p>
+                <p className="text-gray-400">Moulvibazar Polytechnic Institute • 2017-2022</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact and Experience Sections */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Contact Section */}
+            <section className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-5">
+              <h2 className="text-lg font-mono mb-3">Let's Connect</h2>
+              <p className="text-gray-300 text-sm mb-3">Ready to discuss your next backend project?</p>
+              <div className="space-y-2">
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full text-sm h-8">
+                  <Link href="mailto:nurmohammad0605@gmail.com">
+                    <Mail className="w-3 h-3 mr-2" />
+                    Send Email
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="w-full bg-transparent text-sm h-8">
+                  <Link href="https://wa.me/8801889376903" target="_blank">
+                    <Phone className="w-3 h-3 mr-2" />
+                    WhatsApp
+                  </Link>
+                </Button>
+              </div>
+            </section>
+
+            {/* Projects Completed Section */}
+            <section className="bg-gray-900 rounded-xl p-5">
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <h3 className="text-3xl font-bold mb-1">12+</h3>
+              <p className="text-gray-400 text-sm mb-1">Projects Completed</p>
+              <p className="text-xs text-gray-500">Scalable backend solutions</p>
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
