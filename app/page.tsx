@@ -27,8 +27,8 @@ export default function Portfolio() {
         "Community game platform ARV & TMC with real-time notifications, OAuth login, and automated game features using node-cron.",
       github: "https://github.com/NurMohammad56/Psykick-club",
       live: "https://psykick.vercel.app/",
-      stack: "NodeJS, ExpressJS, MongoDB, JWT, OAuth, WebSocket",
-      image: "/public/Screenshot 2025-07-29 184447.png",
+      stack: "NodeJS, ExpressJS, MongoDB, JWT, WebSocket",
+      image: "/Screenshot 2025-07-29 184447.png",
     },
     {
       title: "Diamond Auction",
@@ -37,7 +37,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Diamond-Auctions",
       live: "https://www.diamondauctionsllc.com/",
       stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
-      image: "/public/Screenshot 2025-07-29 184528.png",
+      image: "/Screenshot 2025-07-29 184528.png",
     },
     {
       title: "House Security Check",
@@ -45,7 +45,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Royal-House-Check",
       live: "https://royalhousecheck.com/",
       stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
-      image: "/public/Screenshot 2025-07-29 184547.png",
+      image: "/Screenshot 2025-07-29 184547.png",
     },
     {
       title: "Table Fresh Backend",
@@ -53,7 +53,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/gman54_backend",
       live: "https://tablefresh.org/login",
       stack: "NodeJS, ExpressJS, MongoDB, Payment Gateway",
-      image: "/public/Screenshot 2025-07-29 184621.png",
+      image: "/Screenshot 2025-07-29 184621.png",
     },
     {
       title: "Bitnaro App Backend",
@@ -61,7 +61,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/bitnaro_backend",
       live: null,
       stack: "NodeJS, ExpressJS, MongoDB, Real-time Tracking",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/Screenshot from 2025-07-29 21-09-10.png",
     },
     {
       title: "Washlio App Backend",
@@ -69,7 +69,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/eylanb_backend",
       live: null,
       stack: "NodeJS, ExpressJS, MongoDB, Location Services",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/Screenshot from 2025-07-29 21-10-28.png",
     },
     {
       title: "Courier Service Backend",
@@ -77,7 +77,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Courier-service",
       live: null,
       stack: "NodeJS, ExpressJS, MongoDB, Role Management",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/Screenshot from 2025-07-29 21-11-38.png",
     },
   ]
 
@@ -104,23 +104,40 @@ export default function Portfolio() {
         {/* Left Sidebar */}
         <div className="space-y-8">
           {/* Profile Header */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-start gap-4">
             <Image
-              src="/placeholder.svg?height=60&width=60"
+              src="/WhatsApp Image 2025-07-29 at 9.21.01 PM.jpeg"
               alt="Nur Mohammad Profile"
               width={60}
               height={60}
-              className="rounded-full"
+              className="rounded-full flex-shrink-0"
             />
+
             <div>
               <h1 className="text-2xl font-mono">NUR MOHAMMAD</h1>
               <p className="text-gray-400">BACKEND DEVELOPER</p>
+
               <div className="flex items-center gap-1 text-sm text-gray-500 mt-1">
                 <MapPin className="w-3 h-3" />
                 <span>Dhaka, Bangladesh</span>
               </div>
+
+              <div className="flex gap-2 mt-2">
+                <Button variant="ghost" size="icon" asChild className="bg-gray-800 hover:bg-gray-700">
+                  <Link href="https://github.com/NurMohammad56" target="_blank">
+                    <Github className="w-3 h-3" />
+                  </Link>
+                </Button>
+                <Button variant="ghost" size="icon" asChild className="bg-gray-800 hover:bg-gray-700">
+                  <Link href="https://www.linkedin.com/in/nurmohammad56/" target="_blank">
+                    <Linkedin className="w-3 h-3" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
+
+
 
           {/* Bio */}
           <div className="space-y-6">
@@ -129,8 +146,8 @@ export default function Portfolio() {
               and ExpressJS. Proficient in database design, API development, and cloud integration. Passionate about
               delivering clean, maintainable code.
             </p>
-            <Button variant="outline" className="rounded-full bg-transparent" asChild>
-              <Link href="/app/assets/CV - Nur Mohammad.pdf" target="_blank">
+            <Button variant="outline" className="rounded-full bg-gray-900" asChild>
+              <Link href="/CV - Nur Mohammad.pdf" target="_blank">
                 <Download className="w-4 h-4 mr-2" />
                 Download Resume
               </Link>
@@ -174,26 +191,13 @@ export default function Portfolio() {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
-            <div className="flex gap-4">
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="https://github.com/NurMohammad56" target="_blank">
-                  <Github className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="https://www.linkedin.com/in/nurmohammad56/" target="_blank">
-                  <Linkedin className="w-5 h-5" />
-                </Link>
-              </Button>
-            </div>
-            <div className="text-gray-400 text-sm">
-              <p>© 2024 Nur Mohammad</p>
-              <div className="flex gap-2">
-                <Link href="/resume.pdf" target="_blank" className="hover:text-white">
+          <div className="space-y-1">
+            <div className="text-gray-400 font-bold p- text-sm">
+              <div className="flex gap-2 ">
+                <Link href="/CV - Nur Mohammad.pdf" target="_blank" className="bg-gray-800 hover:bg-gray-700 p-1 rounded">
                   Resume
                 </Link>
-                <Link href="mailto:nurmohammad0605@gmail.com" className="hover:text-white">
+                <Link href="mailto:nurmohammad0605@gmail.com" className="bg-gray-800 hover:bg-gray-700 p-1 rounded">
                   Contact
                 </Link>
               </div>
@@ -267,9 +271,8 @@ export default function Portfolio() {
                 <button
                   key={index}
                   onClick={() => setCurrentProjectIndex(index)}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                    index === currentProjectIndex ? "bg-blue-500" : "bg-gray-600"
-                  }`}
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${index === currentProjectIndex ? "bg-blue-500" : "bg-gray-600"
+                    }`}
                 />
               ))}
             </div>
@@ -281,7 +284,7 @@ export default function Portfolio() {
           </section>
 
           {/* Stack Section */}
-          <section className="bg-blue-600 rounded-xl p-5">
+          <section className="bg-gray-900 rounded-xl p-5">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-mono">Tech Stack</h2>
             </div>
