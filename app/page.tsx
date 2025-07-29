@@ -28,7 +28,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Psykick-club",
       live: "https://psykick.vercel.app/",
       stack: "NodeJS, ExpressJS, MongoDB, JWT, WebSocket",
-      image: "/Screenshot 2025-07-29 184447.png",
+      image: "/psykick.png",
     },
     {
       title: "Diamond Auction",
@@ -37,7 +37,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Diamond-Auctions",
       live: "https://www.diamondauctionsllc.com/",
       stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
-      image: "/Screenshot 2025-07-29 184528.png",
+      image: "/diamond-auction.png",
     },
     {
       title: "House Security Check",
@@ -45,7 +45,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Royal-House-Check",
       live: "https://royalhousecheck.com/",
       stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
-      image: "/Screenshot 2025-07-29 184547.png",
+      image: "/house-security.png",
     },
     {
       title: "Table Fresh Backend",
@@ -53,7 +53,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/gman54_backend",
       live: "https://tablefresh.org/login",
       stack: "NodeJS, ExpressJS, MongoDB, Payment Gateway",
-      image: "/Screenshot 2025-07-29 184621.png",
+      image: "/table-fresh.png",
     },
     {
       title: "Bitnaro App Backend",
@@ -61,7 +61,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/bitnaro_backend",
       live: null,
       stack: "NodeJS, ExpressJS, MongoDB, Real-time Tracking",
-      image: "/Screenshot from 2025-07-29 21-09-10.png",
+      image: "/bitnaro.png",
     },
     {
       title: "Washlio App Backend",
@@ -69,7 +69,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/eylanb_backend",
       live: null,
       stack: "NodeJS, ExpressJS, MongoDB, Location Services",
-      image: "/Screenshot from 2025-07-29 21-10-28.png",
+      image: "/washlio.png",
     },
     {
       title: "Courier Service Backend",
@@ -77,7 +77,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Courier-service",
       live: null,
       stack: "NodeJS, ExpressJS, MongoDB, Role Management",
-      image: "/Screenshot from 2025-07-29 21-11-38.png",
+      image: "/courier-service.png",
     },
   ]
 
@@ -136,8 +136,6 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
-
-
 
           {/* Bio */}
           <div className="space-y-6">
@@ -331,7 +329,7 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Contact Section */}
             <section className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-5">
-              <h2 className="text-lg font-mono mb-3">Let's Connect</h2>
+              <h2 className="text-lg font-mono mb-3">Let&apos;s Connect</h2>
               <p className="text-gray-300 text-sm mb-3">Ready to discuss your next backend project?</p>
               <div className="space-y-2">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full text-sm h-8">
