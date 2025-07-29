@@ -26,9 +26,9 @@ export default function Portfolio() {
       description:
         "Community game platform ARV & TMC with real-time notifications, OAuth login, and automated game features using node-cron.",
       github: "https://github.com/NurMohammad56/Psykick-club",
-      live: "https://psykick.vercel.app/login?returnUrl=%2Fchallenges",
+      live: "https://psykick.vercel.app/",
       stack: "NodeJS, ExpressJS, MongoDB, JWT, OAuth, WebSocket",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/public/Screenshot 2025-07-29 184447.png",
     },
     {
       title: "Diamond Auction",
@@ -37,7 +37,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Diamond-Auctions",
       live: "https://www.diamondauctionsllc.com/",
       stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/public/Screenshot 2025-07-29 184528.png",
     },
     {
       title: "House Security Check",
@@ -45,7 +45,7 @@ export default function Portfolio() {
       github: "https://github.com/NurMohammad56/Royal-House-Check",
       live: "https://royalhousecheck.com/",
       stack: "NodeJS, ExpressJS, MongoDB, Stripe, WebSocket",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/public/Screenshot 2025-07-29 184547.png",
     },
     {
       title: "Table Fresh Backend",
@@ -53,7 +53,7 @@ export default function Portfolio() {
       github: "https://github.com/FSDTeam-SAA/gman54_backend",
       live: "https://tablefresh.org/login",
       stack: "NodeJS, ExpressJS, MongoDB, Payment Gateway",
-      image: "/placeholder.svg?height=120&width=200",
+      image: "/public/Screenshot 2025-07-29 184621.png",
     },
     {
       title: "Bitnaro App Backend",
