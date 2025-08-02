@@ -23,6 +23,7 @@ import { useState } from "react"
 // 4
 // 5
 // 6
+// 7
 
 export default function Portfolio() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
