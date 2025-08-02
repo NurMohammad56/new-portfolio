@@ -17,17 +17,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
-// 1
-// 2
-// 3
-// 4
-// 5
-// 6
-// 7
-// 8
-// 9
-// 10
-
 export default function Portfolio() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
 
